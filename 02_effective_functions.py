@@ -58,3 +58,14 @@ print(get_speak_func(volume=0.7))
 speak_func = get_speak_func(0.7)
 op = speak_func("Hello !")
 print(op)
+
+# Objects can behave like functions -----------------------------------------------------------
+class Adder:
+    def __init__(self, n):
+        self.n = n
+
+    def __call__(self, x):
+        return self.n + x
+
+plus_3 = Adder(3)
+print(plus_3(4))
