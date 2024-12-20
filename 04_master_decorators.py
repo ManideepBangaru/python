@@ -26,5 +26,22 @@ def uppercase(func):
 def greet1():
     return 'Hello !!!'
 
-print(greet1)
+print(greet1())
 
+# Applying multiple decorators to a function ---------------------------------
+def strong(func):
+    def wrapper():
+        return '<strong>' + func() + '</strong>'
+    return wrapper
+
+def emphasis(func):
+    def wrapper():
+        return '<em>' + func() + '</em>'
+    return wrapper
+
+@strong
+@emphasis
+def greet2():
+    return 'Hello !!!!!!'
+
+print(greet2())
