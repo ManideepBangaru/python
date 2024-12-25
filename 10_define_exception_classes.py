@@ -18,8 +18,10 @@ def validate(name):
 def validate(name):
     if len(name) < 10:
         raise ValueError("Name is too short")
-    if len(name) > 20:
+    elif len(name) > 20:
         raise NameTooLongError(name)
+    else:
+        print("Name is fine")
 
 class BaseValidationError(ValueError):
     pass
@@ -31,6 +33,7 @@ class NameTooCuteError(BaseValidationError):
     pass
 
 try:
-    validate("John wick")
-except BaseValidationError as err:
-    handle_validation_error(err)
+    name = "John wick jhkjahfkewaifhweihfiewhfoih"
+    validate(name)
+except NameTooLongError as err:
+    validate(name[:10])
