@@ -14,3 +14,14 @@ print(ys) # ys is not affected
 xs[1][0] = 'X'
 print(xs)
 print(ys) # ys is affected
+
+# Deep copy
+import copy
+xs = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+zs = copy.deepcopy(xs)
+print(xs)
+print(zs)
+
+xs[1][0] = 'X'
+print(xs)
+print(zs) # zs is not affected
