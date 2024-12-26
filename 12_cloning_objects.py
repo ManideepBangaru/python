@@ -8,4 +8,9 @@ print(xs)
 print(ys)
 
 xs.append(['new sublist'])
+print(xs) 
+print(ys) # ys is not affected
+
+xs[1][0] = 'X'
 print(xs)
+print(ys) # ys is affected
