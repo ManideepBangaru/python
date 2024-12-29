@@ -15,3 +15,27 @@ class Concrete(Base):
 
 b = Base()
 b.foo()
+
+c = Concrete()
+c.foo()
+c.bar()
+
+# Here’s an updated implementation using an Abstract Base Class defined with the abc module:
+from abc import ABCMeta, abstractmethod
+
+class Base(metaclass=ABCMeta):
+    @abstractmethod
+    def foo(self):
+        pass
+    
+    @abstractmethod
+    def bar(self):
+        pass
+
+class Concrete(Base):
+    def foo(self):
+        pass
+
+assert issubclass(Concrete, Base)
+
+c = Concrete()
